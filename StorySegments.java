@@ -16,7 +16,7 @@ public class StorySegments {
       System.out.println("You awaken in a dark, damp cavern with nothing but a single match and a pounding headache, "
                          + "you attempt to recall\nlast night's events. Last night's events? What was I doing last night?" 
                          + " Wait, where am I? Who am I?");
-      System.out.print("Enter name- ");
+      System.out.print("\nEnter name- ");
       String playerName = keyboard.nextLine();
       return playerName;
    }
@@ -24,7 +24,7 @@ public class StorySegments {
    public int storyIntroOccupation(String inputPlayerName) {
       System.out.println("\nAh right, " + inputPlayerName + ". Man, I haven't felt this terrible since" 
                          + " that night at the Academy. Wait, the Academy? What was I studying again?");
-      System.out.println("\nSwordsmanship- 1 \nMedicine- 2 \nThe art of being an absolue unit- 3"); 
+      System.out.println("\n\t\tSwordsmanship- 1 \n\t\tMedicine- 2 \n\t\tThe art of being an absolue unit- 3");
       System.out.print("\nPress the corresponding number to select option- ");
       int playerOccupation = keyboard.nextInt();
       // stop player from being stupid and not choosing a correct option
@@ -36,10 +36,10 @@ public class StorySegments {
    }
    // a choice the player can make with different responses based off their chosen occupation
    public void storyIntroYummyRedJuice(int playerOccupation){
-      System.out.println("\nAfter a few minutes of refelction, you're able to gather your thoughts \n"
-                         + "and finally begin to take in your surroundings. Lighting your match,"
-                         + " you look \nall around. On the ground, you find two vials. You're not sure what they are, but\n"
-                         + "picking them up seems to lessen the ache in your head, \nas if they have some sort of magical properties.\n+2 Health Potions"
+      System.out.println("\nAfter a few minutes of reflection, you're able to gather your thoughts "
+                         + "and finally begin to take in your surroundings.\nLighting your match,"
+                         + " you look all around. On the ground, you find two vials. You're not sure what they are,\n"
+                         + "but picking them up seems to lessen the ache in your head, as if they have some sort of magical properties.\n\t\t+2 Health Potions"
                          + "\nAbove you, stalagmites seem to be dripping some mysterious red liquid.");  
       switch (playerOccupation) {
          case (1):
@@ -61,19 +61,19 @@ public class StorySegments {
    public int playerYummyLiquidChoice() {
       int drinkLiquid = 0;
       
-      System.out.println("\nWhat should I do? \nDrink- 1 \nIgnore it- 2");
+      System.out.println("\nWhat should I do? \n\n\t\tDrink- 1 \n\t\tIgnore it- 2");
       drinkLiquid = keyboard.nextInt();
             
       while (drinkLiquid != 1 && drinkLiquid != 2) {
          System.out.println("That wasn't an option, idiot");
-         System.out.println("\nWhat should I do? \nDrink- 1 \nIgnore it- 2");
+         System.out.println("\nWhat should I do? \n\t\tDrink- 1 \n\t\tIgnore it- 2");
          drinkLiquid = keyboard.nextInt();         
       }
       return drinkLiquid;
    }
    // intro to first combat sequence 
    public void firstCombatSegment(){
-      System.out.println("Out of the corner of your eye, you see a projectile flying towards you." 
+      System.out.println("\nOut of the corner of your eye, you see a projectile flying towards you." 
                          + " You just barely duck out of the way.");
    } 
     // intro to combat arena
@@ -84,7 +84,9 @@ public class StorySegments {
    // allow the player to stop the game if they want
    public boolean arenaEscapeChoice() {
       System.out.println("You see a gap in the enemies.. if you make a break for it now you may be"
-                         + " able to make an escape now.\n1. Continue Battling\n2. Escape");
+                         + " able to make an escape now.");
+                         System.out.println("---------------------------------------------------------------------");
+                         System.out.print("\t\t1. Continue Battling\n\t\t2. Escape [");
       boolean running = true;
       int choice = keyboard.nextInt();
       if (choice == 2){
@@ -104,7 +106,7 @@ public class StorySegments {
       }
       else if (winCount >= 10) {
          System.out.println("Bloody and beaten, you limp your way out of the dungeon. You look behind you and glance at the trail of the "
-                             + winCount + " \nbodies of those unfortunate souls who dared to stand in your way. You are a badass. Thanks for playing!");  
+                             + winCount + " \nbodies of those unfortunate souls who dared to stand in your way. You are truly an epic gamer. Thanks for playing!");  
       }
       try {
          FileWriter outputFile = new FileWriter("winCountFile", true);

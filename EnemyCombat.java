@@ -84,12 +84,12 @@ public class EnemyCombat {
             System.out.println("You have died");
             System.exit(0) ;
          }
-         System.out.print("1. Attack!\n2. Healing Potion\n3. Run "); 
+         System.out.print("\t\t1. Attack!\n\t\t2. Healing Potion\n\t\t3. Run ["); 
          int playerCombatChoice = keyboard.nextInt();
          // stop player from choosing option that does not work
          while (playerCombatChoice != 1 && playerCombatChoice != 2 && playerCombatChoice != 3) {
             System.out.println("Not a correct choice bro\n");
-            System.out.print("1. Attack!\n2. Healing Potion\n3. Run "); 
+            System.out.print("\t\t1. Attack!\n\t\t2. Healing Potion\n\t\t3. Run ["); 
             playerCombatChoice = keyboard.nextInt();
          }
          // attack if player chooses attack
@@ -141,7 +141,7 @@ public class EnemyCombat {
          if (healthPotions < 2) {
             int itemDrop = random.nextInt(2) + 1;
             healthPotions += itemDrop;
-            System.out.println("The enemy has dropped something.... +" + itemDrop
+            System.out.println("The enemy has dropped something.... \n\t\t+" + itemDrop
                            + " health potions\nYou now have " + healthPotions 
                            + " health Potions");
          }                     
